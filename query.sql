@@ -7,7 +7,7 @@ JOIN salaries AS s ON e.emp_no=s.emp_no;
 --2) List employees who were hired in 1986.
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31'; -- WHERE hire_date LIKE '1986%'?
+WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
 
 --3)List manager info: department number, department name, the manager's employee number, last name,
@@ -24,7 +24,7 @@ CREATE VIEW emp_info AS --Create view to use for steps 6 & 7
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees AS e
 JOIN dept_emp ON e.emp_no=dept_emp.emp_no
-	JOIN departments AS d ON dept_emp.dept_no=d.dept_no; --subquery?
+	JOIN departments AS d ON dept_emp.dept_no=d.dept_no;
 
 
 --5)List all employees whose first name is "Hercules" and last names begin with "B."
