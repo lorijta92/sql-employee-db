@@ -1,8 +1,8 @@
-#### Goal
+### Goal
 
 Use SQL to analyze data on employees of a company from the 1980s and 1990s using six CSV files.
 
-#### Process
+### Process
 
 The first step before performing any queries was to sketch out an ERD of the tables. I used [QuickDBD](https://www.quickdatabasediagrams.com) to quickly see how the tables corresponding to each CSV file would relate to each other.  
 
