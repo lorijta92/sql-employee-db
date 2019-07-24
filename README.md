@@ -27,3 +27,19 @@ The third query looked into managers, listing the department number and name, an
 For the fourth query, I wanted to list the departments of every employee along with their full name and employee number. The information I needed was stored on two tables, `employees` and `departments`. However, the tables did not share any primary/foreign keys. I therefore, had to use a third table (`dept_emp`) to join the other to together. I first joined `employees` to `dept_emp` on the shared `emp_no`, and then `dept_emp` to `departments` on the shared `dept_no`. Through these joins, I was able to display the department name of each employee along with their name and employee number. 
 
 ![emp_dept_info.png](https://github.com/lorijta92/sql-employee-db/blob/master/Images/Tables/emp_dept_info.png)
+
+For the fifth query, I wanted to list all employees whose first name is "Hercules" and last names begin with "B." To do this, I set two conditions joined by the `AND` clause, and made use of the SQL wildcard character `%` to search for last names beginning with “B”.
+
+![hercules_b.png](https://github.com/lorijta92/sql-employee-db/blob/master/Images/Tables/hercules_b.png)
+
+The sixth query was much like the fourth, except I wanted to list information only for employees in the Sales department. Instead of repeating the fourth query, I created a view of it, named `emp_info`, and queried that, setting the condition of  the department name being “Sales”.
+
+![sales_emp.png](https://github.com/lorijta92/sql-employee-db/blob/master/Images/Tables/sales_emp.png)
+
+The seventh query was like the sixth, but looked into employees in the Development department as well. Here, I used the same query as in the sixth, but for the condition, I used a subquery to search for the department name being “Sales” or “Development”. 
+
+![sales_dev_emp.png](https://github.com/lorijta92/sql-employee-db/blob/master/Images/Tables/sales_dev_emp.png)
+
+For the eighth query, I wanted to count how many employees shared the same last name. To do this, I selected the `last_name` column from the `employees` table and then also used the `COUNT()` function on the same column. I then grouped the data by last names and ordered the data by the count of last names in descending order to see the last names that were most shared among employees. 
+
+![emp_last_name_count]( https://github.com/lorijta92/sql-employee-db/blob/master/Images/Tables/emp_last_name_count.png)
