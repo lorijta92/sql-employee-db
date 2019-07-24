@@ -43,3 +43,7 @@ The seventh query was like the sixth, but looked into employees in the Developme
 For the eighth query, I wanted to count how many employees shared the same last name. To do this, I selected the `last_name` column from the `employees` table and then also used the `COUNT()` function on the same column. I then grouped the data by last names and ordered the data by the count of last names in descending order to see the last names that were most shared among employees. 
 
 ![emp_last_name_count]( https://github.com/lorijta92/sql-employee-db/blob/master/Images/Tables/emp_last_name_count.png)
+
+Finally, I wanted to determine the average salary for each position in the company and graph my findings. To accomplish this, I made use of SQL Alchemy to import the database into Pandas. After connecting to the database and creating an engine, I imported `emp_no` and `salary` from the `salaries` table and `emp_no` and `title` from the `titles` table. I then performed an inner join of the two tables on the shared `emp_no` before grouping the data by `title`. I then took the mean of the salaries per title and rounded by two decimal points. I then plot the data in a bar chart to find that there was not much variance in salary amounts between each employee title.
+
+![avgsalarytitle.png](https://github.com/lorijta92/sql-employee-db/blob/master/Images/avgsalarytitle.png)
