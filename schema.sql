@@ -21,7 +21,7 @@ CREATE TABLE employees (
 -- Create a table for department and employee information
 CREATE TABLE dept_emp (
     emp_no INT NOT NULL PRIMARY KEY,
-    dept_no VARCHAR(5) NOT NULL,
+    dept_no VARCHAR(5) NOT NULL PRIMARY KEY,
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no),
@@ -31,7 +31,7 @@ CREATE TABLE dept_emp (
 -- Create a table for managers
 CREATE TABLE dept_manager (
     emp_no INT NOT NULL PRIMARY KEY,
-    dept_no VARCHAR(5) NOT NULL, 
+    dept_no VARCHAR(5) NOT NULL PRIMARY KEY, 
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no),
@@ -40,7 +40,7 @@ CREATE TABLE dept_manager (
 
 -- Create a table for salaries
 CREATE TABLE salaries (
-    emp_no INT NOT NULL,
+    emp_no INT NOT NULL PRIMARY KEY,
     salary INT NOT NULL,
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE salaries (
 
 -- Create a table for employee titles
 CREATE TABLE titles (
-    emp_no INT NOT NULL,
+    emp_no INT NOT NULL PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
