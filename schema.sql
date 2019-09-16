@@ -20,20 +20,22 @@ CREATE TABLE employees (
 
 -- Create a table for department and employee information
 CREATE TABLE dept_emp (
-    emp_no INT NOT NULL PRIMARY KEY,
-    dept_no VARCHAR(5) NOT NULL PRIMARY KEY,
+    emp_no INT NOT NULL,
+    dept_no VARCHAR(5) NOT NULL,
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
+    PRIMARY KEY (emp_no, dept_no),
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no),
     FOREIGN KEY (dept_no) REFERENCES Departments(dept_no)
 );
 
 -- Create a table for managers
 CREATE TABLE dept_manager (
-    emp_no INT NOT NULL PRIMARY KEY,
-    dept_no VARCHAR(5) NOT NULL PRIMARY KEY, 
+    emp_no INT NOT NULL,
+    dept_no VARCHAR(5) NOT NULL, 
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
+    PRIMARY KEY (emp_no, dept_no),
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no),
     FOREIGN KEY (dept_no) REFERENCES Departments(dept_no)
 );
